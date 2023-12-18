@@ -1,0 +1,8 @@
+SE USAN: Kilos, Margen Contri, Imp Cont (sin com/S rappel), 
+
+Marg Contri Pres = 
+    CALCULATE([ImportesSergio], fPresupuestoSergio2023[Concepto]="Margen Contri")
+               ImportesSergio = sum('fPresupuestoSergio2023'[Valor]) 
+
+Margen Contri Real =
+    SUMX(fvent_fech_gerenciaPresSergio, [subtotalConRappel] - ([costesinincremento] * [unidades]))
